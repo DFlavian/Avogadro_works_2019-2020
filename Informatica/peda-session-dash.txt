@@ -1,0 +1,4 @@
+break *0x00005555555547cb
+break *0x00005555555547b6
+tbreak _start
+

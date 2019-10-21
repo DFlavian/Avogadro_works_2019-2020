@@ -1,0 +1,41 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <unistd.h>
+
+void gotoxy(int x,int y){
+ printf("%c[%d;%df",0x1B,y,x);
+ }
+
+int main() {
+  int n;
+  int div = 2;
+  do {
+    system("clear");
+    gotoxy(13,0);
+    printf("TROVA I DIVISORI DI UN NUMERO E CONTROLLA SE E' PRIMO\n" );
+    printf("Inserisci un numero: ");
+    scanf("%d", &n);
+  } while(n<=0);
+  int cdiv=1;
+  printf("I divisori di %d sono: 1, ", n);
+  while (div<=n/2) {
+    if (n%div == 0) {
+      cdiv++;
+      printf("%d, ", div);
+    }
+    div++;
+  }
+  if (cdiv == 1) {
+    printf("\n" );
+    system("clear");
+    printf("%d e' un numero primo\n", n);
+  }
+  else{
+    if (n!=1) {
+      printf("%d\n", n);
+      cdiv++;
+    }
+    printf("I divisori totali sono %d\n", cdiv);
+  }
+  return 0;
+}

@@ -1,0 +1,18 @@
+body {
+ background-image: url("background.png");
+ background-repeat: no-repeat, repeat;
+ background-color: #121821;
+ max-height: 1500px;
+}  
+body a{
+	text-decoration: none;
+}  
+body center{
+	margin-top: 9px;
+	
+}
+body img.tag {
+	margin-left: -10px;
+	margin-top: 648px;
+	width: 1905px;
+}
