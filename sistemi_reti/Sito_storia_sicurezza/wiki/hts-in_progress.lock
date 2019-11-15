@@ -1,0 +1,7 @@
+Mirror in progress since Fri, 15 Nov 2019 11:38:16 .. please wait!
+httrack https://it.wikipedia.org/wiki/Oltretomba_(fumetto) -O wiki 
+To pause the engine: create an empty file named 'hts-stop.lock'
+PID=32452
+UID=1000
+GID=1000
+START=1573814296
