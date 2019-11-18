@@ -35,7 +35,7 @@ void gotoxy(int x,int y){
      	u = n%10;
 //    printf("%d %d %d %d\n", m, c, d, u);
 
-    printf("Il numero %d in lettere e' ", n);
+    printf("\nIl numero %d in lettere e' ", n);
     //Controllo per vedere la cifra delle migliaia e stampare il valore in lettere
      	switch(m)
     	 {
@@ -81,50 +81,89 @@ void gotoxy(int x,int y){
     		 }
     	 }
     //Controllo per vedere la cifra delle centinaia e stampare il valore in lettere
-    	switch(c)
-    	 {
-         case 1: {
-          if(d==8){//Caso speciale di 180 (centottanta...)
-            printf("cent");
-          }else{
-            printf("cento");
+        if(d == 8) {
+          switch(c)
+          {
+            case 1: {
+              printf("cent");
+              break;
+            }
+            case 2: {
+             printf("duecent");
+             break;
+            }
+            case 3:{
+             printf("trecent");
+             break;
+            }
+            case 4:{
+             printf("quattrocent");
+             break;
+            }
+            case 5:{
+             printf("cinquecent");
+             break;
+            }
+            case 6:{
+             printf("seicent");
+             break;
+            }
+            case 7:{
+             printf("settecent");
+             break;
+            }
+            case 8:{
+             printf("ottocent");
+             break;
+            }
+            case 9:{
+             printf("novecent");
+             break;
+            }
           }
-          break;
-         }
+        }
+        else{
+          switch(c)
+          {
+            case 1: {
+              printf("cento");
+              break;
+            }
 
-    		 case 2: {
-     			printf("duecento");
-    			break;
-    		 }
-    		 case 3:{
-     			printf("trecento");
-    			break;
-    		 }
-    		 case 4:{
-     			printf("quattrocento");
-    			break;
-    		 }
-    		 case 5:{
-     			printf("cinquecento");
-    			break;
-    		 }
-    		 case 6:{
-     			printf("seicento");
-    			break;
-    		 }
-    		 case 7:{
-     			printf("settecento");
-    			break;
-    		 }
-    		 case 8:{
-     			printf("ottocento");
-    			break;
-    		 }
-    		 case 9:{
-     			printf("novecento");
-    			break;
-    		 }
-    	 }
+            case 2: {
+              printf("duecento");
+              break;
+            }
+            case 3:{
+              printf("trecento");
+              break;
+            }
+            case 4:{
+              printf("quattrocento");
+              break;
+            }
+            case 5:{
+              printf("cinquecento");
+              break;
+            }
+            case 6:{
+              printf("seicento");
+              break;
+            }
+            case 7:{
+              printf("settecento");
+              break;
+            }
+            case 8:{
+              printf("ottocento");
+              break;
+            }
+            case 9:{
+              printf("novecento");
+              break;
+            }
+          }
+        }
     //Controllo dei casi speciali (unità 1 oppure 8)
     	if((u==1 || u==8) && d!=1){
 
@@ -286,7 +325,9 @@ void gotoxy(int x,int y){
             }
 
         }
-        printf("\nSi vuole uscire? ");
+
+        printf("\n\nSi vuole uscire? (scrivere s o S)");
         scanf(" %c", &risp);
+        system("clear");
   }while(risp!='S' && risp!='s');
 }
