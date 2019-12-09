@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include <unistd.h>
 
+#define blue "\033[0;94m"
 
 void gotoxy(int x,int y){
  printf("%c[%d;%df",0x1B,y,x);
@@ -13,16 +14,18 @@ void gotoxy(int x,int y){
  	int n, m, c, d, u, r;
   char risp;
   do{
+    //Menu' del programma
      	do{
         system("clear");
      		gotoxy(31,1);
-     		printf("DA NUMERO A LETTERE");
-     		gotoxy(24,3);
-     		printf("Inserire un numero tra 1 e 10000 .....");
-     		gotoxy(57,3);
+     		printf("%sDA NUMERO A LETTERE", blue);
+     		gotoxy(15,3);
+     		printf("Inserire un numero tra 1 e 10000 ---> .....");
+     		gotoxy(53,3);
      		scanf("%d", &n);
      	}while(n<1||n>10000);
 
+      //Calcolo delle singole cifre
      	m = n / 1000;
      	r = n%1000;
 
@@ -33,11 +36,13 @@ void gotoxy(int x,int y){
      	r = n%100;
 
      	u = n%10;
-//    printf("%d %d %d %d\n", m, c, d, u);
 
-    printf("\nIl numero %d in lettere e' ", n);
+    gotoxy(15, 5);
+    printf("Il numero %d in lettere e' ", n);
+
+
     //Controllo per vedere la cifra delle migliaia e stampare il valore in lettere
-     	switch(m)
+      switch(m)
     	 {
      		case 1:{
      			printf("mille");
@@ -80,8 +85,10 @@ void gotoxy(int x,int y){
     			break;
     		 }
     	 }
+
+
     //Controllo per vedere la cifra delle centinaia e stampare il valore in lettere
-        if(d == 8) {
+        if(d == 8) {//In questa parte si controlla se la decina e' 8 (cent-ottanta, duecent-ottanta,...)
           switch(c)
           {
             case 1: {
@@ -164,7 +171,9 @@ void gotoxy(int x,int y){
             }
           }
         }
-    //Controllo dei casi speciali (unità 1 oppure 8)
+
+
+    //Controllo dei casi speciali delle decine (unità 1 oppure 8)
     	if((u==1 || u==8) && d!=1){
 
         	switch(d)
@@ -253,9 +262,8 @@ void gotoxy(int x,int y){
            }
 
 
-         } else {
-
-
+         }
+         else {
            switch(d)
            {
          		 case 2: {
