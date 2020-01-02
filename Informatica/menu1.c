@@ -20,7 +20,6 @@ int main() {
   int div;
   int sdiv;
   int cdiv;
-  char ch;
 
   do {
     do {
@@ -82,8 +81,9 @@ int main() {
         else{
           printf("%d non e' un numero perfetto!\n", n);
         }
-        printf("Premi un tasto per continuare... \n");
-        
+        printf("\n\nPremi un tasto per continuare...");
+        printf(""); //Necessario per il comando successivo
+        system("read continue"); //Aspetta la pressione di un tasto
         break;
       }
 
@@ -121,10 +121,9 @@ int main() {
         else{
           printf("%d non e' un numero abbondante!\n", n);
         }
-        printf("Premi un tasto per continuare... ");
-        fflush(stdin);
-        fflush(stdout);
-        scanf("%c",&ch); //works as getchar() but here extra variable is required.
+        printf("\n\nPremi un tasto per continuare...");
+        printf(""); //Necessario per il comando successivo
+        system("read continue"); //Aspetta la pressione di un tasto
         break;
       }
 
@@ -162,8 +161,9 @@ int main() {
         else{
           printf("%d non e' un numero difettivo!\n", n);
         }
-        printf("Premi un tasto per continuare... ");
-        scanf("%c",&ch); //works as getchar() but here extra variable is required.
+        printf("\n\nPremi un tasto per continuare...");
+        printf(""); //Necessario per il comando successivo
+        system("read continue"); //Aspetta la pressione di un tasto
         break;
       }
     }
