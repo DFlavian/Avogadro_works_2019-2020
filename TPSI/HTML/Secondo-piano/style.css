@@ -3,13 +3,15 @@ body{
   padding: 0px;
 }
 
-.titolo  {
-  background-color: black;
-  color: white;
-
+.titolo{
+    background-color: #212F3D;
+    color: white;
 }
 
-
+.titolo_aula{
+    background-color: #1F618D;
+    color: white;
+    }
 
 .titolo_aula h1{
   padding: 10px;
@@ -19,22 +21,19 @@ p{
   font-size: 16px;
 }
 
+
 .navbar {
   overflow: hidden;
   background-color: #333;
-  position: fixed;
-  top: 0;
-  width: 100%;
 }
 
 .navbar a {
   float: right;
-  display: block;
-  color: #f2f2f2;
+  font-size: 16px;
+  color: white;
   text-align: center;
-  padding: 5px 16px;
+  padding: 14px 16px;
   text-decoration: none;
-  font-size: 17px;
 }
 
 .dropdown {
@@ -47,7 +46,7 @@ p{
   border: none;
   outline: none;
   color: white;
-  padding: 5px 16px;
+  padding: 14px 16px;
   background-color: inherit;
   font-family: inherit;
   margin: 0;
@@ -69,7 +68,7 @@ p{
 .dropdown-content a {
   float: none;
   color: black;
-  padding: 10px 16px;
+  padding: 12px 16px;
   text-decoration: none;
   display: block;
   text-align: left;
@@ -81,4 +80,3 @@ p{
 
 .dropdown:hover .dropdown-content {
   display: block;
-}
