@@ -5,13 +5,17 @@ body{
 }
 
 .titolo{
-    background-color: #e60000;
-    color: white;
+    margin: 3px;
+    border: 2px solid;
+    padding: 0px;
+    width: 100%;
 }
 
 
-.titolo_comp h1{
-  padding: 10px;
+.titolo_comp{
+  background-color: #1F618D;
+  color: white;
+  padding: 0px;
 }
 
 p{
@@ -77,3 +81,4 @@ p{
 
 .dropdown:hover .dropdown-content {
   display: block;
+}
