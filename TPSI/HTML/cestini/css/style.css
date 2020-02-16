@@ -1,4 +1,5 @@
 body {
+    font-family: "Source Sans Pro";
     background-color: bisque;
     padding: 0%;
     margin: 0%;
@@ -8,13 +9,16 @@ body {
     background-color: black;
     height: 25px;
     width: 100%;
+    font-size: 17px;
+    color: white;
+    text-align: center;
 }
 
 .navbar {
     overflow: hidden;
     background-color: #333;
   }
-  
+
   .navbar a {
     float: right;
     font-size: 16px;
@@ -23,12 +27,12 @@ body {
     padding: 14px 16px;
     text-decoration: none;
   }
-  
+
   .dropdown {
     float: left;
     overflow: hidden;
   }
-  
+
   .dropdown .dropbtn {
     font-size: 16px;
     border: none;
@@ -39,11 +43,11 @@ body {
     font-family: inherit;
     margin: 0;
   }
-  
+
   .navbar a:hover, .dropdown:hover .dropbtn {
     background-color: red;
   }
-  
+
   .dropdown-content {
     display: none;
     position: absolute;
@@ -52,7 +56,7 @@ body {
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 1;
   }
-  
+
   .dropdown-content a {
     float: none;
     color: black;
@@ -61,11 +65,71 @@ body {
     display: block;
     text-align: left;
   }
-  
+
   .dropdown-content a:hover {
     background-color: #ddd;
   }
-  
+
   .dropdown:hover .dropdown-content {
     display: block;
+  }
+
+  #header {
+    text-align: center;
+    font-size: 20px;
+    padding: 20px;
+    background-color: #c4dfff;
+  }
+
+  #projects{
+    text-align: center;
+/*    margin-left: 25%;*/
+    border: 3px;
+    border-bottom-style: dashed;
+  }
+
+  #container:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+
+  #container{
+    text-align: center;
+    background-color: #FFF3C4;
+    margin: 10px;
+    border: 5px;
+    font-size: 20px;
+  }
+
+  .cards{
+    border: 3px solid #2874A6;
+    border-radius: 5px;
+    height: 100px;
+    width: 25%;
+    margin: 10px;
+    background-color: #C4DFFF;
+  }
+
+  .cards button{
+    background-color: #2874A6; /* blu */
+    border: 2px solid #2874A6;
+    border-radius: 8px;
+    color: white; /*colore font*/
+    padding: 16px 32px;
+    text-align: center;
+    font-size: 16px;
+    margin: 4px 2px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+  }
+
+  #footer {
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    padding: 20px;
+    text-align: left;
+    font-size: 12px;
+    background: #ddd;
   }
