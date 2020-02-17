@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
@@ -237,3 +238,5 @@ void input_luogo(char luogof[]){
   gotoxy(45,7);
   Stampa_vettore(luogof);
 }
+=======
+>>>>>>> 7e2e14689f61dfb70de5df12e3538ab410b9447c
