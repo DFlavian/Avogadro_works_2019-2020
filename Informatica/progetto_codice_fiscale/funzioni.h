@@ -47,7 +47,7 @@ void stampa_menu(){
       gotoxy(45,6);
       printf(".");
 
-      gotoxy(10,rig++);//8° rigo per il luogo di nascita
+      gotoxy(10,rig++);//8° rigo per il luogof di nascita
       printf("LUOGO DI NASCITA: (codice castale)");
   	  gotoxy(45,7);
       printf("....");
@@ -74,20 +74,26 @@ void upper_string(char s[]){
 
 int input_nome(char nome[]){
     int ascii;
-    //printf("Inserisci il nome: ");
-    gotoxy(45, 3);
-    fgets(nome, 30, stdin);
-    upper_string(nome);
-    for (int i = 0; nome[i] != '\0'; i++){ //loop fino alla fine della stringa
-        ascii = nome[i]; //converte il carattere in un valore numerico rapresentante il suo valore in ASCII
-        while((ascii < 65 || ascii > 90) && ascii != 0){ // Controlla se il valore e' una lettera
-            //Se non e' una lattera rimuovi il carattere e slitta tutte le lettere dopo di essa
-            for(int j = i; nome[j] != '\0'; j++){
-                nome[j] = nome[j+1];
-            }
-            ascii = nome[i]; //Aggiorna la variabile con il nuovo carattere
-        }
-    }
+    int flag;
+    //printf("Inserisci il cognome: ");
+    do{
+      flag = 0;
+      gotoxy(45,3);
+      printf("..............................");
+      gotoxy(45, 3);
+      fgets(nome, 30, stdin);
+      upper_string(nome);
+      for (int i = 0; nome[i] != '\0'; i++){//loop fino alla fine della stringa
+          ascii = nome[i];//converte il carattere in un valore numerico rapresentante il suo valore in ASCII
+          while((ascii < 65 || ascii > 90) && ascii != 0){  // Controlla se il valore e' una lettera
+              if(ascii != 39 && ascii != 10){
+                flag = 1;
+                break;
+              }
+              ascii = nome[i+1];
+          }
+      }
+    }while(flag == 1);
     gotoxy(45,3);
     printf("..............................");
     gotoxy(45, 3);
@@ -110,14 +116,12 @@ int input_cognome(char cognome[]){
           ascii = cognome[i];//converte il carattere in un valore numerico rapresentante il suo valore in ASCII
           while((ascii < 65 || ascii > 90) && ascii != 0){  // Controlla se il valore e' una lettera
               if(ascii != 39 && ascii != 10){
-                printf("%d", ascii);
                 flag = 1;
+                break;
               }
               //Se non e' una lattera rimuovi il carattere e slitta tutte le lettere dopo di essa
-              for(int j = i; cognome[j] != '\0'; j++){
-                  cognome[j] = cognome[j+1];
-              }
-              ascii = cognome[i];
+              printf("")
+              ascii = cognome[i+1];
           }
       }
     }while(flag == 1);
@@ -191,21 +195,21 @@ void input_data(int &gf,int &mf,int &af){
 
 }
 
-char input_genere(){
-  char genere;
+void input_genere(char &generef){
   do{
     gotoxy(45,6);
     printf(".");
     gotoxy(45,6);
-    scanf("%c", &genere);
-    genere = toupper(genere);
-  }while(genere != 'M' && genere != 'F');
+    scanf(" %c", &generef);
+    getchar();
+    generef = toupper(generef);
+  }while(generef != 'M' && generef != 'F');
   gotoxy(45,6);
-  printf("%c", genere);
-  return genere;
+  printf("%c", generef);
 }
 
-void input_luogo(char luogo[]){
+//Input del luogo
+void input_luogo(char luogof[]){
   int flag;
   int ascii;
   do{
@@ -214,22 +218,22 @@ void input_luogo(char luogo[]){
     printf("....");
     gotoxy(45,7);
     fflush(stdin);
-    fgets(luogo, 4, stdin);
-    upper_string(luogo);
-    ascii = luogo[0];
-    if((ascii < 65 || ascii > 90) || strlen(luogo) < 4){
-      //printf("Primo char");
-      //flag = 1;
+    fflush(stdout);
+    fgets(luogof, 100, stdin);
+    upper_string(luogof);
+    ascii = luogof[0];
+    if((ascii < 65 || ascii > 90) || strlen(luogof) < 4){
+      flag = 1;
     }
     else{
       for(int i = 1; i < 4; i++){
-        ascii = luogo[i];
+        ascii = luogof[i];
         if(ascii < 48 || ascii > 57){
           flag = 1;
         }
       }
     }
   }while(flag == 1);
+  gotoxy(45,7);
+  Stampa_vettore(luogof);
 }
-
-//#endif

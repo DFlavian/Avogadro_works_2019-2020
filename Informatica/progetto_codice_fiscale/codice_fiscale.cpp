@@ -22,6 +22,6 @@ int main(){
   input_nome(nome);
   input_cognome(cognome);
   input_data(g, m, a);
-  genere = input_genere();
+  input_genere(genere);
   input_luogo(luogo);
 }
