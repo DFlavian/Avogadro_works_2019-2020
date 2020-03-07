@@ -65,18 +65,15 @@ void Stampa_vettore(char V[]){
 
 void upper_string(char s[]){
     for (int i = 0; s[i]!='\0'; i++) {
-        //printf("Debug: %c\n", s[i]);
         if(s[i] >= 'a' && s[i] <= 'z') {
             s[i] = s[i] -32;
         }
     }
-    //printf("Debug: Fine upper_string\n");
 }
 
 int input_nome(char nome[]){
     int ascii;
     int flag;
-    //printf("Inserisci il cognome: ");
     do{
       flag = 0;
       gotoxy(45,3);
@@ -121,7 +118,6 @@ int input_cognome(char cognome[]){
                 break;
               }
               //Se non e' una lattera rimuovi il carattere e slitta tutte le lettere dopo di essa
-              printf("")
               ascii = cognome[i+1];
           }
       }

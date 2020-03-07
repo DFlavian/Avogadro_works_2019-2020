@@ -17,7 +17,7 @@ void upper_string(char s[]){
     for (int i = 0; s[i]!='\0'; i++) {
         //printf("Debug: %c\n", s[i]);
         if(s[i] >= 'a' && s[i] <= 'z') {
-            s[i] = s[i] -32;
+         s[i] = s[i] -32;
         }
     }
     //printf("Debug: Fine upper_string\n");
@@ -44,7 +44,7 @@ void input_msg(char msgf[]){
       upper_string(msgf);
       for (int i = 0; msgf[i] != '\0'; i++){//loop fino alla fine della stringa
           ascii = msgf[i];//converte il carattere in un valore numerico rapresentante il suo valore in ASCII
-          while((ascii < 65 || ascii > 90) && (ascii != 0 && ascii != ){  // Controlla se il valore e' una lettera
+          while((ascii < 65 || ascii > 90)/* && (ascii != 0 && ascii !=*/ )){  // Controlla se il valore e' una lettera
               if(ascii != 39 && ascii != 10){
                 flag = 1;
               }

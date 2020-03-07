@@ -10,8 +10,7 @@
 int main(){
     char msg[MAX];
     char alfa_1[25];
-    char 
-    system("clear");
+    system("cls");
     input_msg(msg);
     return 0;
 }
