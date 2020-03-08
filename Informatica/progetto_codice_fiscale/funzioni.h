@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+//<<<<<<< HEAD
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
@@ -23,7 +23,7 @@ void stampa_titolo(){
 }
 
 void stampa_menu(){
-  system("clear");//serve per pulire la schermata
+  system("cls");//serve per pulire la schermata
   int rig = 1;    //questa variabile e' utile al posizionamento delle stampe
   stampa_titolo();
   rig = rig + 2;
@@ -102,7 +102,6 @@ int input_nome(char nome[]){
 int input_cognome(char cognome[]){
     int ascii;
     int flag;
-    //printf("Inserisci il cognome: ");
     do{
       flag = 0;
       gotoxy(45,4);
@@ -234,5 +233,5 @@ void input_luogo(char luogof[]){
   gotoxy(45,7);
   Stampa_vettore(luogof);
 }
-=======
->>>>>>> 7e2e14689f61dfb70de5df12e3538ab410b9447c
+/*=======
+>>>>>>> 7e2e14689f61dfb70de5df12e3538ab410b9447c*/

@@ -21,7 +21,7 @@ int main(){
   stampa_menu();
   input_nome(nome);
   input_cognome(cognome);
-  input_data(g, m, a);
+  /*input_data(g, m, a);
   input_genere(genere);
-  input_luogo(luogo);
+  input_luogo(luogo);*/
 }

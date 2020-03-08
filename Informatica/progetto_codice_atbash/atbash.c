@@ -6,25 +6,60 @@
 void main(){
     char msg[80];
     int scelta;//variabile utile alla scelta dell'operazione da eseguire
+    int flag = 0;//Flag utile per capire se si vuole tornare indietro dai menu' codifica/decodifica
+    int msg_ins = 0;
 
-    scelta = stampa_menu();//si stampa il menu' principale e si memorizza la scelta
 
-    /*switch(scelta){
-        case 1:{
-            scelta = menu_codifica();//si stampa il menu' per la codifica e si memorizza la scelta
-            break;
+    do{
+        scelta = menu_codifica();
+
+        switch(scelta){
+            case 1:{
+                input_msg(msg);
+                msg_ins = 1;
+                break;
+            }
+
+            case 2:{
+                if(msg_ins == 1){
+                    flag == 1;
+                    codifica_decodifica(msg);
+                }else{
+                    system("cls");
+                    printf("INSERIRE PRIMA UN MESSAGGIO DA CODIFICARE!!\n");
+                    system("pause");
+                }
+                break;
+            }
         }
+    }while(flag == 0 || scelta != 3);
 
-        case 2:{
-            scelta = menu_decodifica();//si stampa il menu' per la decodifica e si memorizza la scelta
-            break;
+    flag = 0;
+    msg_ins = 0;
+
+    do{
+        scelta = menu_decodifica();
+
+        switch(scelta){
+            case 1:{
+                input_msg(msg);
+                msg_ins = 1;
+                break;
+            }
+
+            case 2:{
+                if(msg_ins == 1){
+                    flag == 1;
+                    codifica_decodifica(msg);
+                }else{
+                    system("cls");
+                    printf("INSERIRE PRIMA UN MESSAGGIO DA DECODIFICARE!!\n");
+                    system("pause");
+                }
+                break;
+            }
         }
-    }*/
+    }while(flag == 0 || scelta != 3);
 
-    /*if(scelta == 4){
-        scelta = stampa_menu;
-    }*/
-
-    input_msg(msg);
 
 }
